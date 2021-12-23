@@ -28,5 +28,6 @@ repositories {
 dependencies {
     // 특정 버전 명시하지 않아도 됨 -> buildscript를 통해 적용됨
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
