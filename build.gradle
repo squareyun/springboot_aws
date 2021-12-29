@@ -33,5 +33,6 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     // 인메모리 관계형 데이터베이스. 메모리에서 실행되서 애플리케이션을 재시작할 때마다 초기화되서 테스트 용도로 많이 사용
     compile('com.h2database:h2')
+    compile('org.springframework.boot:spring-boot-starter-mustache')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
