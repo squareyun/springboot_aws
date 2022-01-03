@@ -1,5 +1,6 @@
 package com.squareyun.study.springboot.web;
 
+import com.squareyun.study.springboot.config.auth.LoginUser;
 import com.squareyun.study.springboot.config.auth.dto.SessionUser;
 import com.squareyun.study.springboot.service.posts.PostsService;
 import com.squareyun.study.springboot.web.dto.PostsResponseDto;
@@ -19,10 +20,9 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc()); // 서버 템플릿 엔진에서 사용할 수 있는 객체를 저장. 결과를 posts로 index.mustache에 전달
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if(user != null) {
             model.addAttribute("userName", user.getName());
         }
